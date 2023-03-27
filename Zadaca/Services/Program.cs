@@ -81,7 +81,7 @@ string GetLiteratureInfo(Literature literature)
 void InsertNewSubjects()
 {
     
-    /* vnesuvanje na podatoci vo baza
+    // vnesuvanje na podatoci vo baza
     
        var subjectfsaf = new List<Subject>
     {
@@ -163,13 +163,13 @@ void InsertNewSubjects()
             }
         }
     };
-  */
-    
-    
+    //tuka
+
+    var json = JsonSerializer.Serialize(subjectfsaf);
     
     var jsonString = Console.ReadLine();
     
-    var subjects = JsonSerializer.Deserialize<List<Subject>>(jsonString ?? throw new InvalidOperationException());
+    var subjects = JsonSerializer.Deserialize<List<Subject>>(json ?? throw new InvalidOperationException());
     if (subjects == null) return;
     foreach (var subject in subjects)
     {
